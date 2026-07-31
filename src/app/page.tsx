@@ -20,7 +20,7 @@ export default function HomePage() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-turq-600">
           The Land of Enchantment
         </p>
-        <h1 className="mx-auto mt-2 max-w-xl font-display text-lg font-medium leading-snug text-ink-500 sm:text-xl">
+        <h1 className="mx-auto mt-2 max-w-4xl font-display text-sm font-normal leading-relaxed text-ink-500 sm:text-base">
           Travel, food &amp; culture across New Mexico — where to wander, where to eat, and
           where the high desert still surprises.
         </h1>
