@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
+/*
+  New Mexico Enchantment Trail — warm, magazine-style palette.
+  Adobe clay / terracotta + turquoise accent on a warm sand ground.
+*/
+@theme {
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+
+  /* Clean, near-white neutrals (kept under the sand-* names used site-wide) */
+  --color-sand-50: #ffffff;
+  --color-sand-100: #f5f7f6;
+  --color-sand-200: #edf0ef;
+  --color-sand-300: #dfe4e2;
+  --color-sand-400: #c4ccc9;
+
+  /* Adobe clay / terracotta (primary) */
+  --color-clay-300: #e0a184;
+  --color-clay-400: #d17d59;
+  --color-clay-500: #c15f38;
+  --color-clay-600: #a54a2a;
+  --color-clay-700: #843a22;
+  --color-clay-800: #6a2f1d;
+
+  /* Turquoise (accent) */
+  --color-turq-300: #6fd0c9;
+  --color-turq-400: #33b3ab;
+  --color-turq-500: #1a968f;
+  --color-turq-600: #137a74;
+  --color-turq-700: #0f605c;
+
+  /* Cool near-black neutrals */
+  --color-ink-900: #1a1f1e;
+  --color-ink-700: #363d3b;
+  --color-ink-500: #626b68;
+  --color-ink-400: #939b98;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-sand-50);
+  --foreground: var(--color-ink-900);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Article body typography (markdown output) */
+.prose-article {
+  color: var(--color-ink-700);
+  font-size: 1.075rem;
+  line-height: 1.85;
+}
+.prose-article p {
+  margin: 1.15em 0;
+}
+.prose-article h2 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  line-height: 1.2;
+  color: var(--color-ink-900);
+  margin: 2em 0 0.6em;
+}
+.prose-article h3 {
+  font-family: var(--font-display), Georgia, serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: var(--color-ink-900);
+  margin: 1.6em 0 0.5em;
+}
+.prose-article a {
+  color: var(--color-clay-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-article ul,
+.prose-article ol {
+  margin: 1.15em 0;
+  padding-left: 1.4em;
+}
+.prose-article li {
+  margin: 0.4em 0;
+}
+.prose-article ul li {
+  list-style: disc;
+}
+.prose-article ol li {
+  list-style: decimal;
+}
+.prose-article blockquote {
+  border-left: 3px solid var(--color-turq-400);
+  background: var(--color-sand-100);
+  margin: 1.6em 0;
+  padding: 0.8em 1.2em;
+  font-family: var(--font-display), Georgia, serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--color-ink-900);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.prose-article strong {
+  color: var(--color-ink-900);
+  font-weight: 600;
+}
+.prose-article hr {
+  border: 0;
+  border-top: 1px solid var(--color-sand-300);
+  margin: 2.4em 0;
 }
